@@ -10,9 +10,9 @@
         >
 
     <Grid>
-        <Button x:Name="ValidateButton"  FontSize="11" Background="Green" Foreground="White" IsEnabled="True" Content="Подтвердить" HorizontalAlignment="Left" Margin="165,243,0,0" VerticalAlignment="Top" Width="69" Height="24" Click="ValidateButton_Click"/>
-        <Button x:Name="SwapButton" FontSize="11" Background="Tomato" Foreground="White" IsEnabled="True" Content="Поменять" HorizontalAlignment="Left" Margin="10,243,0,0" VerticalAlignment="Top" Width="70" Height="24" Click="SwapButton_Click"/>
-        <Button x:Name="ReloadButton" FontSize="14" Background="PaleVioletRed" Foreground="White" IsEnabled="True" Content="Вернуть" HorizontalAlignment="Left" Margin="88,243,0,0" VerticalAlignment="Top" Width="69" Height="24" Click="ReloadButton_Click"/>
+        <Button x:Name="ValidateButton"  FontSize="11" Background="Green" Foreground="White" IsEnabled="True" Content="Accept" HorizontalAlignment="Left" Margin="165,243,0,0" VerticalAlignment="Top" Width="69" Height="24" Click="ValidateButton_Click"/>
+        <Button x:Name="SwapButton" FontSize="11" Background="Tomato" Foreground="White" IsEnabled="True" Content="Swap" HorizontalAlignment="Left" Margin="10,243,0,0" VerticalAlignment="Top" Width="70" Height="24" Click="SwapButton_Click"/>
+        <Button x:Name="ReloadButton" FontSize="14" Background="PaleVioletRed" Foreground="White" IsEnabled="True" Content="Back" HorizontalAlignment="Left" Margin="88,243,0,0" VerticalAlignment="Top" Width="69" Height="24" Click="ReloadButton_Click"/>
         <UniformGrid x:Name="BoardGrid" Columns="15" Rows="15" HorizontalAlignment="Left" Height="235" VerticalAlignment="Top" Width="233" Margin="0,6,0,0">
             <UniformGrid.Resources>
                 <Style TargetType="{x:Type Button}">
@@ -25,8 +25,12 @@
 
         <Grid HorizontalAlignment="Left" Height="490" Margin="671,3,0,0" VerticalAlignment="Top" Width="601"/>
         <Grid Height="75" Margin="0,265,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="233">
-            <Label x:Name="PlayerInfoLbl" Content="Это ваши фишки!" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Width="233" FontSize="13" FontFamily="Microsoft YaHei Mono"/>
-            <UniformGrid x:Name="HandGrid" Columns="7" Rows="1" Margin="0,0,0,10" Height="40" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="233">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="44*"/>
+                <ColumnDefinition Width="189*"/>
+            </Grid.ColumnDefinitions>
+            <Label x:Name="PlayerInfoLbl" Content="It`s your chips!" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Width="233" FontSize="13" FontFamily="Microsoft YaHei Mono" Grid.ColumnSpan="2"/>
+            <UniformGrid x:Name="HandGrid" Columns="7" Rows="1" Margin="0,0,0,10" Height="40" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="233" Grid.ColumnSpan="2">
                 <UniformGrid.Resources>
                     <Style TargetType="{x:Type Button}">
                         <Setter Property="Margin" Value="2"/>
@@ -34,8 +38,8 @@
                     </Style>
                 </UniformGrid.Resources>
             </UniformGrid>
-            <Label x:Name="StorageLbl" Content="" HorizontalAlignment="Left" Margin="298,50,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
-            <Grid HorizontalAlignment="Right" Margin="0,0,0,3" Width="160" Name="Panel">
+            <Label x:Name="StorageLbl" Content="" HorizontalAlignment="Left" Margin="254,50,0,0" VerticalAlignment="Top" Visibility="Hidden" Grid.Column="1"/>
+            <Grid HorizontalAlignment="Right" Margin="0,0,0,3" Width="160" Name="Panel" Grid.Column="1">
 
             </Grid>
         </Grid>
